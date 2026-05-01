@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Star, MapPin, ArrowLeft, Calendar, MessageCircle,
   Phone, CheckCircle, ChevronLeft, ChevronRight,
-  Loader2, AlertCircle, Instagram, Globe, Youtube,
+  Loader2, AlertCircle, Globe,
   Clock, Users, IndianRupee, Sparkles,
 } from "lucide-react";
 import { getVendorDetail } from "../api/vendors";
