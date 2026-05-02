@@ -1,1 +1,201 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* ── Design Tokens ───────────────────────────────────────────── */
+:root {
+  --cream:       #FBF8F3;
+  --cream-dark:  #F2ECE1;
+  --deep:        #1C1108;
+  --gold:        #C8903A;
+  --gold-light:  #E8C070;
+  --gold-pale:   #F7EDDA;
+  --rose:        #C05070;
+  --rose-light:  #F0D0DA;
+  --rose-pale:   #FBF0F3;
+  --teal:        #2A7A70;
+  --teal-light:  #E0F0EE;
+  --sand:        #E8DDD0;
+  --text:        #2C1F10;
+  --text-muted:  #7A6655;
+  --text-light:  #B0998A;
+  --white:       #FFFFFF;
+  --border:        rgba(200, 144, 58, 0.18);
+  --border-strong: rgba(200, 144, 58, 0.35);
+  --shadow-sm: 0 2px 12px rgba(28, 17, 8, 0.06);
+  --shadow-md: 0 8px 32px rgba(28, 17, 8, 0.10);
+  --shadow-lg: 0 20px 60px rgba(28, 17, 8, 0.14);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Outfit', sans-serif;
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a    { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: var(--font-body); border: none; background: none; }
+input, textarea, select {
+  font-family: var(--font-body);
+  outline: none;
+  border: none;
+  background: none;
+}
+
+img { display: block; max-width: 100%; }
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--cream-dark); }
+::-webkit-scrollbar-thumb { background: var(--gold-light); border-radius: 10px; }
+
+/* ── Container ───────────────────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 13px 28px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #B07A2E;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(200, 144, 58, 0.32);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 26px;
+  border-radius: 100px;
+  border: 1.5px solid var(--gold);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: var(--gold-pale);
+  transform: translateY(-1px);
+}
+
+.btn-outline:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Section Tag ─────────────────────────────────────────────── */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: var(--gold-pale);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+
+/* ── Display Heading ─────────────────────────────────────────── */
+.display-heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* ── Animations ──────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ── Spinner (loading) ───────────────────────────────────────── */
+.auth-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+/* ── Loader spin utility ─────────────────────────────────────── */
+.spin { animation: spin 1s linear infinite; }
+
+/* ── Auth Shared ─────────────────────────────────────────────── */
+.auth-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
