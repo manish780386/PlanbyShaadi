@@ -1,0 +1,296 @@
+.hiw-page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* ── Hero ────────────────────────────────────────────────────── */
+.hiw-hero {
+  background: var(--deep);
+  padding: 80px 0 70px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hiw-hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at top right, rgba(200, 144, 58, 0.18), transparent 55%),
+    radial-gradient(ellipse at bottom left, rgba(192, 80, 112, 0.12), transparent 55%);
+  pointer-events: none;
+}
+
+.hiw-hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.hiw-hero__title {
+  font-size: clamp(36px, 5vw, 64px);
+  color: white;
+  margin-bottom: 18px;
+  line-height: 1.12;
+}
+
+.hiw-hero__title em { color: var(--gold-light); font-style: italic; }
+
+.hiw-hero__sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.65;
+  max-width: 520px;
+  margin: 0 auto 36px;
+  font-weight: 300;
+}
+
+.hiw-hero__actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Steps ───────────────────────────────────────────────────── */
+.hiw-steps { background: var(--cream); }
+
+.hiw-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.hiw-step-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  position: relative;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.hiw-step-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.hiw-step-card__num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+  opacity: 0.6;
+}
+
+.hiw-step-card__icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.hiw-step-card__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.hiw-step-card__desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.hiw-step-card__points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.hiw-step-card__points li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ── Benefits ────────────────────────────────────────────────── */
+.hiw-benefits { background: var(--cream-dark); }
+
+.hiw-benefits__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.hiw-benefit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.hiw-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  transition: box-shadow 0.2s;
+}
+
+.hiw-benefit-item:hover { box-shadow: var(--shadow-sm); }
+
+.hiw-benefit-item__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hiw-benefit-item__title {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.hiw-benefit-item__desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ── FAQ ─────────────────────────────────────────────────────── */
+.hiw-faq { background: var(--cream); }
+
+.hiw-faq__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hiw-faq-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.hiw-faq-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.hiw-faq-card__q {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.hiw-faq-card__a {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── CTA ─────────────────────────────────────────────────────── */
+.hiw-cta { background: var(--cream-dark); }
+
+.hiw-cta__card {
+  position: relative;
+  background: var(--deep);
+  border-radius: var(--radius-xl);
+  padding: 80px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hiw-cta__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.hiw-cta__orb--1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(200, 144, 58, 0.18);
+  top: -120px;
+  right: -80px;
+}
+
+.hiw-cta__orb--2 {
+  width: 320px;
+  height: 320px;
+  background: rgba(192, 80, 112, 0.12);
+  bottom: -80px;
+  left: -60px;
+}
+
+.hiw-cta__content { position: relative; z-index: 2; }
+
+.hiw-cta__title {
+  font-size: clamp(30px, 4vw, 52px);
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.hiw-cta__title em { color: var(--gold-light); font-style: italic; }
+
+.hiw-cta__sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 480px;
+  margin: 0 auto 36px;
+  line-height: 1.65;
+}
+
+.hiw-cta__actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hiw-steps__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .hiw-benefits__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hiw-faq__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .hiw-steps__grid   { grid-template-columns: 1fr; }
+  .hiw-hero          { padding: 60px 0 50px; }
+  .hiw-cta__card     { padding: 50px 24px; }
+}
