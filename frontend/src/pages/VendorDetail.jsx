@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Star, MapPin, ArrowLeft, Calendar, MessageCircle,
   Phone, CheckCircle, ChevronLeft, ChevronRight,
-  Loader2, AlertCircle, Globe,
-  Clock, Users, IndianRupee, Sparkles,
+  Loader2, AlertCircle, Globe, Play,
+  Clock, Users, IndianRupee, Sparkles, Share2,
 } from "lucide-react";
 import { getVendorDetail } from "../api/vendors";
 import { createBooking }   from "../api/bookings";
@@ -315,12 +315,12 @@ export default function VendorDetail() {
             <div className="vd-social">
               {vendor.instagram_url && (
                 <a href={vendor.instagram_url} target="_blank" rel="noreferrer" className="vd-social-link">
-                  <Instagram size={16} /> Instagram
+                  <Share2 size={16} /> Instagram
                 </a>
               )}
               {vendor.youtube_url && (
                 <a href={vendor.youtube_url} target="_blank" rel="noreferrer" className="vd-social-link">
-                  <Youtube size={16} /> YouTube
+                  <Play size={16} /> YouTube
                 </a>
               )}
               {vendor.website_url && (
